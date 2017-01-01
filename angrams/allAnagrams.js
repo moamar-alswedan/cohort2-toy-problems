@@ -28,6 +28,3 @@ var allAnagrams = function(string) {
   return Res
 
 };
-
-var y="webkitAudioContext"
-var x=y.split("")
