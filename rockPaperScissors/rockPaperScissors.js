@@ -28,9 +28,9 @@ function rockPaperScissors(arr) {
   	if(arr.length===0) {
   		arrRes.push(arr.shift())
   	}
-  	rockPaperScissors(arr);
-  	arr.splice(i,0,arr[i]);
-  	arr.pop()
+  	
   }
   return arrRock
 }
+
+

@@ -16,6 +16,18 @@
   */
 
 var allAnagrams = function(string) {
-	
+  var arr=string.split("");
+  var chr=""
+  var Res=[]
+  for (var i = 0; i < arr.length; i++) {
+    chr=chr+arr[i]
+    
+  }
+    Res.push(chr)
+  
+  return Res
 
 };
+
+var y="webkitAudioContext"
+var x=y.split("")
