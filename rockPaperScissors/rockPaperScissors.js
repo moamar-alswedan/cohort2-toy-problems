@@ -17,20 +17,21 @@
 * rockPaperScissors(5); // => [['rock', 'rock', 'rock', 'rock', 'rock'], etc...]
 *
 */
-
-var arr=["rock","paper","scissors"]
-
-function rockPaperScissors(arr) {
-	
-    var arrRes=[]
-  for (var i = 1; i <3; i++) {
-  	arrRes.push(arr[0]);
-  	if(arr.length===0) {
-  		arrRes.push(arr.shift())
-  	}
-  	
-  }
-  return arrRock
+function rockPaperScissors(number){
+  var array =[];
+  var array2 =["rock","paper","scissors"]
+  var bigArray=[];
+  array.length=3;
+  bigArray.length=number;
+  	if (number > 0) {
+  		for (var i = 0; i < array.length; i++) {
+	    	var x=Math.floor(Math.random() * array2.length)
+    		array.push(array2[x])
+  		}
+  			if (bigArray.indexOf(array) === -1) {
+  				bigArray.push(array)
+  			}
+  	}	
+  return bigArray + rockPaperScissors(number-1);
 }
-
 
