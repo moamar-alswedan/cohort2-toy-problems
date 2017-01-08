@@ -14,6 +14,19 @@ square(3);//should return 9
 cube(3);//should return 27
 */
 
+var pow=function(n){
+   var instance={}
+   instance.initial=n
+   instance.square=function(){
+    Math.pow(this.initial,2)
+   	}
+   	instance.cube=function(){
+    Math.pow(this.initial,3)
+   	}
+
+   return instance
+}
+
 /*
 Problem 2:
 Write a function pingPongTracker that accepts no arguments and returns an object with the
@@ -33,3 +46,60 @@ myGame.playOneGame();//should return "Game played";
 myGame.timeSpentPlaying(); //should return 30;
 myGame.myLevel(); //should return "You need to improve your game"
 */
+
+// using closure
+var pingPongTracker=function(){
+    var instance={};
+    instance.time=0
+
+instance.playOneGame = function() {
+	this.time+=15
+	return "Game played"
+};
+instance.timeSpentPlaying = function() {
+	return this.time
+};
+instance.myLevel = function() {
+	//debugger
+	if( this.time <30 ) {
+		return "I need to improve my game"
+	}	
+	else if (this.time>=30 && this.time<=100 ) {
+		return "You need to improve your game"
+	}
+	else if (this.time>100 ) {
+		return "Wow, I have wasted a lot of time"
+	}
+};
+
+  return instance
+}
+
+
+// using prototype
+var pingPongTracker=function(){
+    this.time=0
+}
+
+
+pingPongTracker.prototype.playOneGame = function() {
+	this.time+=15
+	return "Game played"
+};
+
+pingPongTracker.prototype.timeSpentPlaying = function() {
+	return this.time
+};
+pingPongTracker.prototype.myLevel = function() {
+	//debugger
+	if( this.time <30 ) {
+		return "I need to improve my game"
+	}	
+	else if (this.time>=30 && this.time<=100 ) {
+		return "You need to improve your game"
+	}
+	else if (this.time>100 ) {
+		return "Wow, I have wasted a lot of time"
+	}
+};
+
