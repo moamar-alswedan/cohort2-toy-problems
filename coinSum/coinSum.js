@@ -12,3 +12,19 @@ Given that total amount of pences, calculate the number of ways to create that a
 Example:
 coinCombination(200p) //-> 73682
 */
+var coinSums=function(pences){
+	// declare  £1 ,£2
+	var £1 = 100;
+	var £2 = 200;
+	// declare  counter of number of ways.
+	var count = 0;
+    // declare  array of currency.
+	var currency =  [1, 2, 5, 10, 20, 50, £1, £2];
+	// alculate the number of ways to create that amount.
+	for (var i = 0; i < currency.length; i++) {
+		if( pences-currency[i] !== 0 ) {
+			count++
+		}
+	}
+	return count;
+}
