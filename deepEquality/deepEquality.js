@@ -13,5 +13,25 @@
   */
 
   var deepEquals = function(obj1, obj2){
-
+    // convert the objects to string
+    obj1 = JSON.stringify(obj1)
+    // split the string to array
+    obj1 = obj1.split('"')
+    obj2 = JSON.stringify(obj2)
+    obj2 = obj2.split('"')
+    // compare the length of arrays
+    if (obj1.length !== obj2.length) {
+      return false
+    }
+    flag=true
+    // compare the tow array 
+    for (var i = 0; i < obj1.length; i++) {
+      if(obj1[i]===obj2[i]){
+        flag=flag && true 
+      } else {
+      flag=flag && false
+      }
+      }
+      return flag
   }
+   // complexity time : O(n)
