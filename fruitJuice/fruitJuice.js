@@ -21,7 +21,34 @@ Complete the functions in order to provide this functionality.
 */
 
 function Jar() {
-  // TODO
+  this._storage = {};
+}
+
+Jar.prototype.add = function(units, juice) {
+  this._storage[juice] = units
+};
+
+Jar.prototype.remove = function(units, juice) {
+  var temp = this._storage[juice] ;
+  temp=this._storage[juice] - units
+  return temp
+};
+
+Jar.prototype.getTotalAmount = function() {
+  var total = 0;
+  for (var key in this._storage) {
+    total+= this._storage[key]
+  }
+  return total
+}
+
+
+Jar.prototype.getConcentration = function(juice) {
+  if(Object.keys(this._storage).length === 0) {
+    return 0
+  } else {
+    return this._storage[juice] / this.getTotalAmount()
+  }
 }
 
 /*
