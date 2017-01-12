@@ -55,6 +55,8 @@ Jar.prototype.getConcentration = function(juice) {
   }
 }
 
+// time complexity = O(n)
+
 /*
 These are some tests:
 var jar = new Jar();
