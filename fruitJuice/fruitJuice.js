@@ -21,20 +21,23 @@ Complete the functions in order to provide this functionality.
 */
 
 function Jar() {
+  // object to store juice and units
   this._storage = {};
 }
 
 Jar.prototype.add = function(units, juice) {
+	// add juice and unit to the storage.
   this._storage[juice] = units
 };
 
-Jar.prototype.remove = function(units, juice) {
+Jar.prototype.remove = function(units, juice) { 
   var temp = this._storage[juice] ;
   temp=this._storage[juice] - units
   return temp
 };
 
 Jar.prototype.getTotalAmount = function() {
+	// we sum all the units
   var total = 0;
   for (var key in this._storage) {
     total+= this._storage[key]
@@ -44,10 +47,11 @@ Jar.prototype.getTotalAmount = function() {
 
 
 Jar.prototype.getConcentration = function(juice) {
+	// count the precentage of juice from total
   if(Object.keys(this._storage).length === 0) {
     return 0
   } else {
-    return this._storage[juice] / this.getTotalAmount()
+    return this._storage[juice] / this.getTotalAmount() * 100  + "%"
   }
 }
 
