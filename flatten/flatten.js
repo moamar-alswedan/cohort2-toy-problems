@@ -33,3 +33,5 @@ flatten.prototype.result = function(){
 	 } 
 return this.res	
 }
+
+ // time complexity  : O(n2)
