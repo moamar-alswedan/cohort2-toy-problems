@@ -35,9 +35,26 @@ rotate(data, 12478) // => [3, 4, 5, 1, 2]
 
 */
 function rotate(array, steps){
-
+	if(steps === 0 && steps === array.length) {
+		return array;
+	}
+	if(steps > 0){
+       for (var i = array.length-1 ; steps > 0; steps--) {
+       	array.unshift(array[i]);
+       	array.splice(i+1,1);
+       }
+	};
+	if(steps < 0){
+		steps = Math.abs(steps)
+       for (var i = steps-1 ; steps > 0; steps--) {
+       	array.push(array[i]);
+       	array.splice(i,1);
+       }
+	};
+	return array;
 }
 
+// time complexity = O(log(n))
 /*
 Problem 2 (Advanced)
 You have to create a function that takes a positive integer number and returns the 
@@ -56,5 +73,15 @@ nextBigger(531)==-1
 */
 
 function nextBigger(num){
+	var res = []
+	num = num.toString().split("");
+	for (var i = 0; i < num.length; i++) {
+		num[i]=Number(num[i])
+	}
+	num.sort()
+	for (var i = num.length-1; i >= 0; i--) {
+		res.push(num[i])
+	}
+	return res.join("")
 
 }
