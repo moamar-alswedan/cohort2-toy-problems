@@ -5,5 +5,13 @@ Hint the answer is 1366.
 */
 
 var powerOfTwo = function(num){
-
+    var sum = 0 
+    var power = Math.pow(2,num) 
+    while (power > 0 ) {
+	    sum = sum + (power % 10)
+	    power = parseInt(power / 10)
+    }
+  return sum;
 }
+
+// time compixity  O(n)
