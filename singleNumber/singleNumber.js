@@ -14,8 +14,15 @@ arr = [2,4,3,6,8,2,3,4,8];
 singleNumber(arr);//should return 6 because it only appear once
 */
 function singleNumber(arr){
-
+	arr.sort(function(a, b){
+		return a - b});
+	for (var i = 0; i < arr.length; i+=2) {
+		if(arr[i]!==arr[i+1])
+			return arr[i]
+	}
 }
+
+// runtime complexity : O(n)
 
 /*
 Problem 2 (medium):
@@ -32,7 +39,10 @@ twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
 function twoSum(nums, target){
-
+	for (var i = 0 , j= nums.length-1; i < nums.length; i++,j--) {
+		if((nums[i] + nums[j]) === target)
+		return [i,j]
+	}
 }
 
 /*
