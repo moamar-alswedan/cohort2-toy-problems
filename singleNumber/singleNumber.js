@@ -15,6 +15,7 @@ singleNumber(arr);//should return 6 because it only appear once
 */
 function singleNumber(arr){
 	arr.sort(function(a, b){
+		debugger
 		return a - b});
 	for (var i = 0; i < arr.length; i+=2) {
 		if(arr[i]!==arr[i+1])
@@ -39,15 +40,15 @@ twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
 function twoSum(nums, target){
-	for (var i = 0 , j= nums.length-1; i < nums.length; i++,j--) {
+	for (var i = 0 , j= nums.length-1; i < j; i++) {
 		if((nums[i] + nums[j]) === target)
-		return [i,j]
 	}
+		return [i,j]
 }
 
 /*
 Problem 3 (advanced):
-Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x < 10^n.
+Given a non-negative integerser n, count all numbers with unique digits, x, where 0 ≤ x < 10^n.
 
 Example:
 Given n = 2, return 91. (The answer should be the total numbers in the range of 0 ≤ x < 100, 

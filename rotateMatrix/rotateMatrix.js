@@ -12,12 +12,12 @@
  *
  * Example rotation of a 4x4 matrix:
  *
- * var matrix = [
- *  [1,2,3,4],
- *  [5,6,7,8],
- *  [9,'A','B','C'],
- *  ['D','E','F','G']
- * ];
+  var matrix = [
+  [1,2,3,4],
+  [5,6,7,8],
+  [9,'A','B','C'],
+  ['D','E','F','G']
+   ];
  *
  * matrix[0][0]; // 1
  * matrix[3][2]; // 'F'
@@ -38,6 +38,15 @@
  */
 
 var rotateMatrix =function (matrix) {
-	
+    
+	for (var i = 0; i < matrix.length; i++) {
+	   	// var len = matrix.length-1 
+	   for (var j = 0; j < matrix.length-1; j++) {
+	   	matrix[i][j] = matrix[matrix.length-j-1][i]
+	   }
+	}
+	return matrix
 }
+
+//complixity time =O(n2)
 ///////////////////
