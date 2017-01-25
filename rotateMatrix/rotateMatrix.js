@@ -37,15 +37,14 @@
  *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
  */
 
-var rotateMatrix =function (matrix) {
-    
-	for (var i = 0; i < matrix.length; i++) {
+ var rotateMatrix =function (matrix) {
+ 	for (var i = 0; i < matrix.length; i++) {
 	   	// var len = matrix.length-1 
-	   for (var j = 0; j < matrix.length-1; j++) {
-	   	matrix[i][j] = matrix[matrix.length-j-1][i]
-	   }
+	   	for (var j = 0; j < matrix.length-1; j++) {
+	   		matrix[i][j] = matrix[matrix.length-j-1][i]
+	   	}
 	}
-	return matrix
+	   return matrix
 }
 
 //complixity time =O(n2)
