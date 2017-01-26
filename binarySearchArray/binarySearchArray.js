@@ -9,8 +9,19 @@
  * 
  * console.log(index); // 4
  */
+ var array = [1,5,8,8,24,25];
+ var target = 8;
 
-var binarySearch = function (array, target) {
-  
-};
+ var binarySearch = function (array, target) {
+    
+ 	var mid = Math.floor(array.length/2);
+    if (array[mid] === target) {
+    } else if (array[mid] < target & array.length>1) {
+    	array.splice(0,mid)
+    	binarySearch (array,target)
+    } else if (array[mid] > target & array.length>1) {
+    	array.splice(mid,mid-1)
+    	binarySearch (array,target)
+    }
+ };
 
