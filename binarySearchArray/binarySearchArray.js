@@ -16,12 +16,13 @@
     
  	var mid = Math.floor(array.length/2);
     if (array[mid] === target) {
+    	return mid
     } else if (array[mid] < target & array.length>1) {
-    	array.splice(0,mid)
-    	binarySearch (array,target)
+    
+    	binarySearch (array.splice(mid,array.log),target)
     } else if (array[mid] > target & array.length>1) {
-    	array.splice(mid,mid-1)
-    	binarySearch (array,target)
+  
+    	binarySearch (rray.splice(0,mid),target)
     }
  };
 
