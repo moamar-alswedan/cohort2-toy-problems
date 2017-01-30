@@ -54,3 +54,4 @@ var dirReduc = function(directions){
 
 // complixity time = O(n)
 console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]))
+console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
