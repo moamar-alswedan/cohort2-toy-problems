@@ -28,6 +28,7 @@ dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]) => [] //don't nee
 */
 
 var dirReduc = function(directions){
+<<<<<<< HEAD
 	// I should remove from array all the opposite way
 	var newArr =[];
 	for (var i = 0; i < directions.length; i++) {
@@ -55,3 +56,9 @@ var dirReduc = function(directions){
 // complixity time = O(n)
 console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]))
 console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
+=======
+	
+	return directions;
+};
+
+>>>>>>> d2130e14cb0ab2ec81404accbb5aee359f2349a4
