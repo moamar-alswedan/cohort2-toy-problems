@@ -20,7 +20,7 @@ var largestProductOfThree = function(array) {
 	
 };
 
-console.log(largestProductOfThree([-1,2, 1, 3, 7,-2]))
+console.log(largestProductOfThree([-5,2, 1, 3, 7,-2]))
 
 
 
