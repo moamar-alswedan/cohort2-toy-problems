@@ -54,7 +54,7 @@
   var add2 = function(number){ return number + 2; }
   var multiplyBy3 = function(number){ return number * 3; }
   var addAndMultiply = pipe(add2, multiplyBy3);
-  console.log(addAndMultiply(5));//should be 21
+ // console.log(addAndMultiply(5));//should be 21
 
 //==============================================================================
 
@@ -63,14 +63,16 @@ var exclaim = function(statement) { return statement.toUpperCase() + '!';}
 
 var compose = function () {
   // variable for teh result
-  var result="";
+ // var result="";
 // make afunction with the result parameter
+  var arg= Array.from(arguments)
 return function (result) {
+
   // iteration over the arguments
-  for (var i = arguments - 1; i >=0; i--) {
+  for (var i =0 ; i < arg.length - 1; i++) {
     // moving right to left through  arguments 
     // we start from last function
-    result = arguments[i].call(this, result);
+    result = arg[i].call(this, result);
   }
   return result;
 };
