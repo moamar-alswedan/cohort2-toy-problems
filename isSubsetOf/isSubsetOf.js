@@ -22,6 +22,16 @@
  * Extra credit: Make the method work for arrays that contain objects and/or arrays as elements.
 */
 
-Array.prototype.isSubsetOf = function (arr) {
 
+ Array.prototype.isSubsetOf = function (arr) {
+  var flag = true;
+   for (var i = 0; i < this.length; i++) {
+   	if( arr.indexOf(this[i]) === -1 ){
+   		flag = flag && false
+   	}
+   }
+   return flag
 }
+
+var a = ['commit','push1'];
+console.log(a.isSubsetOf(['commit','rebase','push','blame']));
