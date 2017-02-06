@@ -34,5 +34,5 @@
  }
 
 // complixity time = O(n2)
-var a = ['commit','push'];
+var a = ['commit','push1'];
 console.log(a.isSubsetOf(['commit','rebase','push','blame']));
