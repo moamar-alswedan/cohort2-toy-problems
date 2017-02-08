@@ -16,14 +16,19 @@
  * You should return `null` on invalid input.
  */
 
-var translateRomanNumeral = function(romanNumeral){
-	var DIGIT_VALUES = {
-	  I: 1,
-	  V: 5,
-	  X: 10,
-	  L: 50,
-	  C: 100,
-	  D: 500,
-	  M: 1000
-	};
-}
+ var translateRomanNumeral = function(romanNumeral){
+ 	var DIGIT_VALUES = {
+ 		I: 1,
+ 		V: 5,
+ 		X: 10,
+ 		L: 50,
+ 		C: 100,
+ 		D: 500,
+ 		M: 1000
+ 	};
+ 	romanNumeral = romanNumeral.split("");
+ 	
+ 	
+
+ }
+ console.log(translateRomanNumeral('LLIX'))
