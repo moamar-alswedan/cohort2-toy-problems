@@ -15,11 +15,16 @@
  *
  * See http://en.wikipedia.org/wiki/Subset for more on the definition of a
  * subset.
+<<<<<<< HEAD
  */
+=======
+*/
+>>>>>>> ec1197ded368e7aad2cc2c29d5059a3905f42645
 
 
 /*
  * Extra credit: Make the method work for arrays that contain objects and/or arrays as elements.
+<<<<<<< HEAD
  */
 
 
@@ -36,3 +41,10 @@
 // complixity time = O(n2)
 var a = ['commit','push1'];
 console.log(a.isSubsetOf(['commit','rebase','push','blame']));
+=======
+*/
+
+Array.prototype.isSubsetOf = function (arr) {
+
+}
+>>>>>>> ec1197ded368e7aad2cc2c29d5059a3905f42645
