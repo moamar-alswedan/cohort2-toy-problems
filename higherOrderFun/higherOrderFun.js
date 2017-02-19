@@ -10,11 +10,20 @@ of calling the callback function.
 
 See example usage to understand what arguments are passed to the callback.
 */
-
 Array.prototype.map = function(callback){
-
+	var arr = [];
+	for (var i = 0; i < this.length; i++) {
+		arr.push(callback(this[i],i,this))
+	}
+	return arr
 }
 
+//time comlicity = O(n)
+
+var transform = function(element,index,array){
+	return array[index] + index + element;
+};
+console.log(["a","b","c"].map(transform))
 /*
 Example usage:
 var transform = function(element,index,array){
@@ -39,6 +48,13 @@ Please see example usage to understand what should be passed to the callback.
 */
 
 var asyncSum = function(a,b,callback){
+	setTimeout(function () {
+		if(typeof a === 'number' && typeof b === 'number'){
+			callback(a + b);
+		} else {
+			callback("Incorrect argument(s)")
+		}
+	}, 1000)
 
 };
 
@@ -47,24 +63,25 @@ Example use:
 */
 
 var logNumber = function(error, number){
-  if(error){
-    console.log('Error: ', error);
-  } else {
-    console.log('The total is: ', number)
-  }
+	if(error){
+		console.log('Error: ', error);
+	} else {
+		console.log('The total is: ', number)
+	}
 };
 
 /*
 asyncSum(10,7,logNumber);//should print "The total is: 17" after 1 second
 asyncSum(10,"B",logNumber);//should print "Error: Incorrect argument(s)" after 1 second
 */
-
+console.log(asyncSum(10,7,logNumber));
+console.log(asyncSum(10,"B",logNumber));
 
 /*
 Problem 3 (ADVANCED):
 
 What kind of candy do you like?
-Your answer: 
+Your answer: Nmorh with pistachio
 
 */
 
