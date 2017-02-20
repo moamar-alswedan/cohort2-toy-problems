@@ -15,9 +15,14 @@ abc(); // should return 'a' again on this fourth call
 
 
 function makeLooper(string){
-
+	var count = 0;
+	return function () {
+		while(count < string.length){
+			return string[count++]
+		}
+	}
 };
-
+// time  complixity O(n)
 
 /*
 Problem 2:
@@ -52,7 +57,19 @@ pyramid(1666); // should === 16
 */
 
 function pyramid(cans){
-	
+	var count = 0;
+	for (var i = 1;  cans >=0 ; i++) {
+		cans = cans - (Math.pow(i,2));
+		count++;
+	}
+	if(cans = 0) {
+	return count
+} else {
+	return count-1
+}
 };
 
+// complixity time O(n)
+
+console.log(pyramid(14));
 
